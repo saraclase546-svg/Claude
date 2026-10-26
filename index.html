@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NETCLONE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Pantalla 1: selección de perfil -->
+  <section id="profiles" class="screen profiles">
+    <div class="logo big">NETCLONE</div>
+    <h1>¿Quién está viendo ahora?</h1>
+    <div id="profile-list" class="profile-list"></div>
+  </section>
+
+  <!-- Pantalla 2: catálogo -->
+  <section id="browse" class="screen browse hidden">
+    <header id="nav" class="nav">
+      <div class="nav-left">
+        <div class="logo">NETCLONE</div>
+        <nav class="nav-links">
+          <a href="#" data-filter="all" class="active">Inicio</a>
+          <a href="#" data-filter="serie">Series</a>
+          <a href="#" data-filter="pelicula">Películas</a>
+          <a href="#" data-filter="mylist">Mi lista</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <div class="search">
+          <button id="search-toggle" class="icon-btn" aria-label="Buscar">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          </button>
+          <input id="search-input" type="text" placeholder="Títulos, personas, géneros">
+        </div>
+        <button id="avatar-btn" class="avatar small" aria-label="Cambiar perfil"></button>
+      </div>
+    </header>
+
+    <div id="hero" class="hero"></div>
+    <main id="rows" class="rows"></main>
+    <div id="search-results" class="search-results hidden"></div>
+
+    <footer class="footer">
+      <p>Proyecto educativo inspirado en Netflix. Títulos ficticios. Vídeos de muestra: películas abiertas de la Blender Foundation (CC-BY).</p>
+    </footer>
+  </section>
+
+  <!-- Ventana de detalles -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button id="modal-close" class="modal-close" aria-label="Cerrar">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Reproductor -->
+  <div id="player" class="player hidden">
+    <button id="player-back" class="player-back" aria-label="Volver">← Volver</button>
+    <video id="video" controls playsinline></video>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
