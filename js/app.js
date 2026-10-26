@@ -340,6 +340,7 @@ function play(id) {
   video.addEventListener('loadedmetadata', () => {
     if (p) video.currentTime = p.time; // Reanudar donde se quedó
   }, { once: true });
+  $('#player-msg').classList.add('hidden');
   $('#player').classList.remove('hidden');
   document.body.classList.add('no-scroll');
   video.play().catch(() => {});
@@ -371,6 +372,9 @@ $('#video').addEventListener('timeupdate', e => {
   }
 });
 $('#video').addEventListener('ended', stopPlayer);
+$('#video').addEventListener('error', () => {
+  if (playing) $('#player-msg').classList.remove('hidden');
+});
 
 // ---------- Eventos globales ----------
 

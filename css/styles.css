@@ -5,6 +5,7 @@
   --text: #e5e5e5;
   --muted: #a3a3a3;
   --gutter: 4%;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -415,6 +416,19 @@ a { color: inherit; text-decoration: none; }
   background: rgba(0, 0, 0, .5);
 }
 .player-back:hover { background: rgba(255, 255, 255, .15); }
+
+.player-msg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 420px;
+  padding: 1.5rem;
+  background: rgba(20, 20, 20, .9);
+  border-radius: 6px;
+  text-align: center;
+  line-height: 1.5;
+}
 
 /* ---------- Pie ---------- */
 
